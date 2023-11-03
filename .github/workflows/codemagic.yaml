@@ -5,8 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Unity Android Workflow
-        env:
-          TARGET_BUILD_NUMBER: 0
         run: echo "Do something here"
 
       - name: Set build number and export Unity
