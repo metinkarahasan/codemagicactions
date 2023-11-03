@@ -10,10 +10,12 @@ jobs:
       - name: Set build number and export Unity
         run: |
           echo "Setting TARGET_BUILD_NUMBER to 888"
-          echo "TARGET_BUILD_NUMBER=888" >> $GITHUB_ENV
+          echo "TARGET_BUILD_NUMBER=888" > target_build_number.txt
 
       - name: Discord notification
         run: |
           set -ex
           export NEW_BUILD_NUMBER=1
-          echo $TARGET_BUILD_NUMBER
+
+          TARGET_BUILD_NUMBER=$(cat target_build_number.txt)
+          echo "TARGET_BUILD_NUMBER: $TARGET_BUILD_NUMBER"
