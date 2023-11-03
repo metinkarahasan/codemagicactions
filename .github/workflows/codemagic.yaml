@@ -7,9 +7,12 @@ jobs:
       - name: Unity Android Workflow
         env:
           TARGET_BUILD_NUMBER: 0
+        run: echo "Do something here"
+
       - name: Set build number and export Unity
         run: |
           export TARGET_BUILD_NUMBER=888
+
       - name: Discord notification
         run: |
           set -ex
