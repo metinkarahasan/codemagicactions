@@ -1,0 +1,17 @@
+name: Code-Magic
+on: push
+jobs:
+  unity-android-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Unity Android Workflow
+        env:
+          TARGET_BUILD_NUMBER: 0
+      - name: Set build number and export Unity
+        run: |
+          export TARGET_BUILD_NUMBER=888
+      - name: Discord notification
+        run: |
+          set -ex
+          export NEW_BUILD_NUMBER=1
+          echo "TARGET_BUILD_NUMBER: $TARGET_BUILD_NUMBER"
