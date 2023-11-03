@@ -10,7 +10,7 @@ jobs:
       - name: Set build number and export Unity
         run: |
           echo "Setting TARGET_BUILD_NUMBER to 888"
-          export TARGET_BUILD_NUMBER = 888
+          export TARGET_BUILD_NUMBER=888
           echo "$TARGET_BUILD_NUMBER" > target_build_number.txt
 
       - name: Discord notification
