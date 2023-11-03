@@ -21,7 +21,7 @@ jobs:
           if [ "$TARGET_BUILD_NUMBER" = "$NEW_BUILD_NUMBER" ]; then
               echo "Build numbers match."
           else
-              echo "Build numbers match."
+              echo "Build numbers doesnt match."
               echo "$TARGET_BUILD_NUMBER"
               echo "$NEW_BUILD_NUMBER"
           fi    
