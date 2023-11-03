@@ -3,8 +3,6 @@ on: push
 jobs:
   unity-android-workflow:
     runs-on: ubuntu-latest
-    env:
-      BUILD_NUMBER: 1
     steps:
       - name: Unity Android Workflow
         run: echo "Do something here"
@@ -14,8 +12,7 @@ jobs:
           echo "Setting TARGET_BUILD_NUMBER to 888"
           export TARGET_BUILD_NUMBER=888
           echo "$TARGET_BUILD_NUMBER" > target_build_number.txt
-          export BUILD_NUMBER=2
-
+          export BUILD_NUMBER=212
       - name: Discord notification
         run: |
           set -ex
