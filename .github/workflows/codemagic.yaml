@@ -11,7 +11,8 @@ jobs:
 
       - name: Set build number and export Unity
         run: |
-          export TARGET_BUILD_NUMBER=888
+          echo "Setting TARGET_BUILD_NUMBER to 888"
+          echo "::set-env name=TARGET_BUILD_NUMBER::888"
 
       - name: Discord notification
         run: |
