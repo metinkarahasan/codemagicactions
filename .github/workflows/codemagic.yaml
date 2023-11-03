@@ -5,13 +5,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Unity Android Workflow
-        env:
-          TARGET_BUILD_NUMBER: 0
+        run: echo "Do something here"
       - name: Set build number and export Unity
         run: |
+          echo "Setting TARGET_BUILD_NUMBER to 888"
           export TARGET_BUILD_NUMBER=888
+          echo "$TARGET_BUILD_NUMBER" > target_build_number.txt
       - name: Discord notification
         run: |
           set -ex
-          export NEW_BUILD_NUMBER=1
-          echo "TARGET_BUILD_NUMBER: $TARGET_BUILD_NUMBER"
+          echo $BUILD_NUMBER
+          export NEW_BUILD_NUMBER=888
+          TARGET_BUILD_NUMBER=$(cat target_build_number.txt)
+          if [ "$TARGET_BUILD_NUMBER" = "$NEW_BUILD_NUMBER" ]; then
+              echo "Build numbers match."
+          else
+              echo "Build numbers doesnt match."
+              echo "$TARGET_BUILD_NUMBER"
+              echo "$NEW_BUILD_NUMBER"
+          fi    
