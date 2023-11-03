@@ -16,7 +16,7 @@ jobs:
         run: |
           set -ex
           export NEW_BUILD_NUMBER=1
-          NEW_BUILD_NUMBER = 1
+          NEW_BUILD_NUMBER=$(1)
           TARGET_BUILD_NUMBER=$(cat target_build_number.txt)
           if [ "$TARGET_BUILD_NUMBER" = "$NEW_BUILD_NUMBER" ]; then
               echo "Build numbers match."
